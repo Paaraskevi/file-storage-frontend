@@ -1,12 +1,19 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component,OnInit } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { FeatherModule } from 'angular-feather';
+import feather from 'feather-icons';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [RouterModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'file-storage-frontend';
+export class AppComponent implements OnInit {
+  ngOnInit() {
+    if (typeof feather !== 'undefined') {
+      feather.replace();
+    }
+  }
 }

@@ -1,0 +1,32 @@
+<div class="container">
+    <h2>Uploaded Files</h2>
+    
+    <div *ngIf="appFile.length === 0" class="alert alert-info">
+      No files uploaded yet.
+    </div>
+    
+    <table class="table table-striped" *ngIf="appFile.length > 0">
+      <thead>
+        <tr>
+          <th>File Name</th>
+          <th>File Type</th>
+          <th>Size</th>
+          <th>Upload Time</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let file of appFile">
+            <td>{{ file.fileName }}</td>
+            <td>{{ file.fileType }}</td>
+            <td>{{ file.fileSize }}</td>
+            <td>{{ file.uploadTime }}</td>
+            <td>
+                <button class="btn btn-danger btn-sm" (click)="deleteFile(+file.id)">
+                    <i class="feather-icon feather-delete"></i>
+                </button>
+              </td>
+          </tr> 
+      </tbody>
+    </table>
+  </div>
