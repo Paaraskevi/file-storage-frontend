@@ -25,6 +25,9 @@
                 <button class="btn btn-danger btn-sm" (click)="deleteFile(+file.id)">
                     <i class="feather-icon feather-delete"></i>
                 </button>
+                <button class="btn btn-sm" (click)="downloadFile(file.fileName)">
+                    <i class="feather-icon feather-download"></i>
+              </button>
               </td>
           </tr> 
       </tbody>

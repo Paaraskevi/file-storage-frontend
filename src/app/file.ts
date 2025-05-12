@@ -1,8 +1,8 @@
 export interface AppFile {
     shortLink: string;
-    id: Number;
-    fileName: String;
-    fileType: String;
-    fileSize: Number;
-    uploadTime: String;
+    id: number;
+    fileName: string;
+    fileType: string;
+    fileSize: number;
+    uploadTime: string;
   }

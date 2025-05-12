@@ -60,4 +60,10 @@ export class FileService {
       reader.readAsDataURL(file); 
     });
   }
+
+  downloadFile(fileName: string): Observable<Blob> {
+    const url = `http://localhost:8080/file/download/${encodeURIComponent(fileName)}`;
+    return this.http.get(url, { responseType: 'blob' });
+  }
+  
 }

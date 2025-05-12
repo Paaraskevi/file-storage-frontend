@@ -60,4 +60,6 @@
   .table td:last-child {
     text-align: center;
   }
-  
+.btn-sm{
+  color: green;
+}

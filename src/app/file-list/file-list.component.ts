@@ -60,4 +60,19 @@ export class FileListComponent {
       fileInput.value = '';
     }
   }
+  
+  downloadFile(filename: string) {
+    this.fileUploadService.downloadFile(filename).subscribe({
+      next: (blob) => {
+        const link = document.createElement('a');
+        link.href = window.URL.createObjectURL(blob);
+        link.download = filename;
+        link.click();
+      },
+      error: (error) => {
+        console.error('Download failed', error);
+        alert('File download failed');
+      }
+    });
+  }
 }
