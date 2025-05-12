@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { AppFile } from '../file'
 import { FileService } from '../service/file.service';
 import { HttpClientModule } from '@angular/common/http';
+import feather from 'feather-icons';
+
 @Component({
   selector: 'app-file-list',
   imports: [CommonModule, HttpClientModule],
@@ -16,6 +18,9 @@ export class FileListComponent {
   constructor(private fileUploadService: FileService) { }
 
   ngOnInit() {
+     if (typeof feather !== 'undefined') {
+          feather.replace();
+        }
     this.getFiles();
   }
 
