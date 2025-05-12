@@ -1,0 +1,39 @@
+
+<div class="container">
+    <h2>Uploaded Files</h2>
+    
+    <div *ngIf="properties.length === 0" class="alert alert-info">
+      No files uploaded yet.
+    </div>
+    
+    <table class="table table-striped" *ngIf="properties.length > 0">
+      <thead>
+        <tr>
+          <th>Property <Address></Address></th>
+          <th>Forperty Type</th>
+          <th>Property Size</th>
+          <th>Property Bedrooms</th>
+          <th>Property Bathrooms</th>
+          <th>Property Listed Date</th>
+          <th>Property Price</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let property of properties">
+            <td>{{ property.address }}</td>
+            <td>{{ property.propertyType }}</td>
+            <td>{{ property.squareFeet }}</td>
+            <td>{{ property.bedrooms }}</td>
+            <td>{{ property.bathrooms }}</td>
+            <td>{{ property.price }}</td>
+            <td>{{ property.listedDate }}</td>
+            <td>
+                <button class="btn btn-danger btn-sm" (click)="deleteProperty(+(property.id ?? 0))">
+                    <i class="feather-icon feather-delete"></i>
+                </button>
+              </td>
+          </tr> 
+      </tbody>
+    </table>
+  </div>
